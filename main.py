@@ -20,6 +20,7 @@ def main():
         1. Generate new password
         2. Get password
         3. Change passphase
+        4. To Exit
             """)
       choice = input("")
 
@@ -39,6 +40,9 @@ def main():
 
       if choice == "3":
         new_passphrase()
+
+      if choice == "4":
+        break
   else:
     print("Sorry, incorrect passphase.")
 
