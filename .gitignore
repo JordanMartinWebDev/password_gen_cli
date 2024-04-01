@@ -1,4 +1,5 @@
 __pycache__/
+build/
 key.key
 key2.key
 passwords.json
