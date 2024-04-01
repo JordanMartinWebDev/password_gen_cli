@@ -1,6 +1,5 @@
 from password import Password
 import random
-import json
 import hashlib
 from encryption import encrypt, decrypt, load_key
 from newuser import check_setup, new_passphrase
@@ -8,7 +7,7 @@ from newuser import check_setup, new_passphrase
 def main():
   check_setup()
 
-  file = open("key.txt", "r")
+  file = open("key2.key", "r")
   master = file.read()
   if master == hashlib.sha256(input("Enter your passphrase: ").encode()).hexdigest():
     choice = True
