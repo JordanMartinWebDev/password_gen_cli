@@ -26,28 +26,17 @@ def main():
 
       #choices
       if choice == "1":
-        decrypt(pass_file, key)
-
-        with open('passwords.json', 'r') as openfile:
-          password = json.load(openfile)
+        password = decrypt(pass_file, key)
         name = input("Enter the name of your password: ")
         password[name] = Password(random.randrange(10, 20)).__dict__
-        with open("passwords.json", "w") as outfile:
-          json.dump(password, outfile)
-
-        encrypt(pass_file, key)
-
+        encrypt(pass_file, password, key)
+        
       if choice == "2":
-        decrypt(pass_file, key)
-
-        with open('passwords.json', 'r') as openfile:
-          password = json.load(openfile)
+        password = decrypt(pass_file, key)
         name = ""
         while name not in password:
           name = input("Enter the name of your password: ")
         print(password[name]["_password"])
-
-        encrypt(pass_file, key)
 
       if choice == "3":
         new_passphrase()
